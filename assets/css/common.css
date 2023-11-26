@@ -1,0 +1,276 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+textarea {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: "SamsungOneKoreanOTF", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  vertical-align: baseline;
+  letter-spacing: 0;
+  color: #000000;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  position: relative;
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: none;
+}
+
+table {
+  font-family: "SamsungOneKoreanOTF", sans-serif;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button {
+  outline: none;
+  border: none;
+  padding: 0;
+  background: transparent;
+  font-family: "SamsungOneKoreanOTF", sans-serif;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+img {
+  width: 100%;
+  vertical-align: top;
+  object-fit: cover;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: #000;
+}
+
+select {
+  outline: 0;
+}
+
+html,
+body {
+  overscroll-behavior: auto;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+li {
+  list-style: none;
+}
+
+input,
+select {
+  background: transparent;
+  outline: none;
+  color: #000000;
+  font-family: "SamsungOneKoreanOTF", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+input {
+  appearance: none;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 0;
+}
+
+input::placeholder,
+select:disabled {
+  color: #bbbbbb !important;
+}
+
+input[type=date]::before {
+  content: attr(data-placeholder);
+  color: #bbbbbb;
+  width: 100%;
+}
+
+input[type=date]:focus::before,
+input[type=date]:valid::before {
+  display: none;
+}
+
+textarea {
+  resize: none;
+  width: 100%;
+  background: transparent;
+}
+textarea:focus {
+  outline: none;
+}
+
+textarea::placeholder {
+  color: #666 !important;
+  opacity: 1; /* 파이어폭스에서 뿌옇게 나오는 현상을 방지하기 위한 css */
+}
+
+textarea::-webkit-input-placeholder {
+  color: #666 !important;
+}
+
+textarea:-ms-input-placeholder {
+  color: #666 !important;
+}
+
+textarea:-mos-input-placeholder {
+  color: #666 !important;
+}
+
+@keyframes mainBgGradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+.main-wrap {
+  /*background: linear-gradient(-45deg, #c084fc, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: mainBgGradient 15s ease infinite;*/
+  background-image: url("../images/soyeon.svg");
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-color: #111111;
+  height: 100vh;
+}
+
+/*# sourceMappingURL=common.css.map */

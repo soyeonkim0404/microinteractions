@@ -1,0 +1,35 @@
+//@import 'fonts';
+@import 'reset';
+
+body{
+
+}
+
+@keyframes mainBgGradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+.main-wrap{
+  /*background: linear-gradient(-45deg, #c084fc, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: mainBgGradient 15s ease infinite;*/
+  background-image: url("../images/soyeon.svg");
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-color: #111111;
+  height: 100vh;
+  .pages{
+    .link{
+
+    }
+  }
+}
