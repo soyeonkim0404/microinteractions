@@ -100,18 +100,6 @@ textarea {
 }
 
 /* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-menu,
-nav,
-section {
-  display: block;
-}
-
 body {
   position: relative;
   line-height: 1;
@@ -250,27 +238,136 @@ textarea:-mos-input-placeholder {
   color: #666 !important;
 }
 
-@keyframes mainBgGradient {
+@keyframes fadeInRight {
   0% {
-    background-position: 0 50%;
-  }
-  50% {
-    background-position: 100% 50%;
+    opacity: 0;
+    left: 20%;
   }
   100% {
-    background-position: 0 50%;
+    opacity: 1;
+    left: 0;
   }
 }
 .main-wrap {
-  /*background: linear-gradient(-45deg, #c084fc, #e73c7e, #23a6d5, #23d5ab);
-  background-size: 400% 400%;
-  animation: mainBgGradient 15s ease infinite;*/
-  background-image: url("../images/soyeon.svg");
-  background-position: center;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-color: #111111;
+  position: relative;
+  width: 100%;
   height: 100vh;
+  background: #111;
+}
+.main-wrap .logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 85%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.menu nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s, visibility 0.35s, height 0.35s;
+  overflow: hidden;
+}
+.menu nav ul li {
+  opacity: 0;
+}
+.menu nav:before {
+  content: "";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  transition: all 500ms ease-in-out;
+  clip-path: circle(30px at 65px calc(100% - 65px));
+  visibility: hidden;
+}
+.menu .menu-icon {
+  display: inline-block;
+  cursor: pointer;
+  position: fixed;
+  z-index: 100;
+  bottom: 30px;
+  left: 30px;
+  width: 70px;
+  height: 70px;
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+  background: #fff;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.24);
+  line-height: 0.6;
+  text-align: center;
+}
+.menu .menu-icon > span {
+  display: inline-block;
+  position: relative;
+  height: 2px;
+  width: 34px;
+  border-radius: 1px;
+  background: #293335;
+  vertical-align: middle;
+}
+.menu .menu-icon > span:before, .menu .menu-icon > span:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  height: 2px;
+  border-radius: 1px;
+  background: #293335;
+}
+.menu .menu-icon > span:before {
+  top: -11px;
+  left: 3px;
+  width: 28px;
+}
+.menu .menu-icon > span:after {
+  top: 11px;
+  left: 6px;
+  width: 22px;
+}
+.menu .menu-icon:focus {
+  outline: none;
+}
+.menu .menu-icon:hover > span:after, .menu .menu-icon:hover > span:before {
+  width: 34px;
+  left: 0;
+}
+.menu.active nav {
+  opacity: 0.9;
+  visibility: visible;
+  height: 100%;
+}
+.menu.active nav ul li {
+  animation: fadeInRight 0.5s ease forwards;
+  animation-delay: 0.35s;
+  color: #fff;
+}
+.menu.active nav:before {
+  visibility: visible;
+  clip-path: circle(100%);
+}
+.menu.active .menu-icon > span {
+  height: 0;
+}
+.menu.active .menu-icon > span:after, .menu.active .menu-icon > span:before {
+  top: 0;
+  left: 0;
+  width: 34px;
+}
+.menu.active .menu-icon > span:before {
+  transform: rotate(45deg);
+}
+.menu.active .menu-icon > span:after {
+  transform: rotate(-45deg);
 }
 
 /*# sourceMappingURL=common.css.map */

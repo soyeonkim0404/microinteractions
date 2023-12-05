@@ -12,11 +12,25 @@
 </head>
 <body>
     <div class="main-wrap">
-        <div class="inner">
-            <div class="pages">
-                <a href="./pages/playButton.html" class="link">play button</a>
-            </div>
+        <img src="./assets/images/soyeon.svg" alt="soyeonImg" class="logo"/>
+        <div class="menu">
+            <button class="menu-icon" type="button" aria-label="toggle menu">
+                <span aria-hidden="true"></span>
+            </button>
+            <nav>
+                <ul>
+                    <li>ddddd</li>
+                </ul>
+            </nav>
         </div>
     </div>
+
+    <script>
+        const menu = document.querySelector('.menu');
+        const menuBtn = menu.querySelector('.menu-icon');
+        menuBtn.addEventListener('click', event => {
+            menu.classList.toggle('active');
+        })
+    </script>
 </body>
 </html>

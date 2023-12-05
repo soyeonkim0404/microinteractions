@@ -1,35 +1,145 @@
 //@import 'fonts';
 @import 'reset';
 
-body{
-
-}
-
-@keyframes mainBgGradient {
+@keyframes fadeInRight {
   0% {
-    background-position: 0 50%;
-  }
-  50% {
-    background-position: 100% 50%;
+    opacity: 0;
+    left: 20%;
   }
   100% {
-    background-position: 0 50%;
+    opacity: 1;
+    left: 0;
   }
 }
 
 .main-wrap{
-  /*background: linear-gradient(-45deg, #c084fc, #e73c7e, #23a6d5, #23d5ab);
-  background-size: 400% 400%;
-  animation: mainBgGradient 15s ease infinite;*/
-  background-image: url("../images/soyeon.svg");
-  background-position: center;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-color: #111111;
+  position: relative;
+  width:100%;
   height: 100vh;
-  .pages{
-    .link{
+  background: #111;
+  .logo{
+    position: absolute;
+    top:50%;
+    left:50%;
+    width:85%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+  }
+}
 
+.menu{
+  nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .35s, visibility .35s, height .35s;
+    overflow: hidden;
+    ul{
+      li{
+        opacity: 0;
+      }
+    }
+    &:before{
+      content: '';
+      display: block;
+      position: fixed;
+      top:0;
+      left:0;
+      width:100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.8);
+      transition: all 500ms ease-in-out;
+      clip-path: circle(30px at 65px calc(100% - 65px));
+      visibility: hidden;
+    }
+  }
+  .menu-icon{
+    display: inline-block;
+    cursor: pointer;
+    position: fixed;
+    z-index: 100;
+    bottom:30px;
+    left:30px;
+    width:70px;
+    height: 70px;
+    border:none;
+    border-radius: 50%;
+    padding:0;
+    background: #fff;
+    box-shadow:0 4px 24px rgba(#000, 0.24);
+    line-height: 0.6;
+    text-align: center;
+    > span{
+      display: inline-block;
+      position: relative;
+      height: 2px;
+      width:34px;
+      border-radius: 1px;
+      background: #293335;
+      vertical-align: middle;
+      &:before, &:after{
+        content: '';
+        display: inline-block;
+        position: absolute;
+        height: 2px;
+        border-radius: 1px;
+        background: #293335;
+      }
+      &:before{
+        top: -11px;
+        left:3px;
+        width:28px;
+      }
+      &:after{
+        top:11px;
+        left: 6px;
+        width:22px;
+      }
+    }
+    &:focus{
+      outline: none;
+    }
+    &:hover > span:after,
+    &:hover > span:before{
+      width:34px;
+      left:0;
+    }
+  }
+  &.active{
+    nav{
+      opacity: .9;
+      visibility: visible;
+      height: 100%;
+      ul{
+
+        li{
+          animation: fadeInRight .5s ease forwards;
+          animation-delay: .35s;
+          color:#fff;
+        }
+      }
+      &:before{
+        visibility: visible;
+        clip-path: circle(100%);
+      }
+    }
+    .menu-icon > span{
+      height: 0;
+      &:after, &:before{
+        top:0;
+        left:0;
+        width:34px;
+      }
+      &:before{
+        transform: rotate(45deg);
+      }
+      &:after{
+        transform: rotate(-45deg);
+      }
     }
   }
 }
